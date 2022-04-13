@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <!--  meta tags from https://getbootstrap.com/docs/5.1/getting-started/introduction/ starter template -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    crossorigin="anonymous"> 
+
+    <!-- Jquery from HW instructions -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../static/log_sales.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'log_sales.js') }}"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+       <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        console.log("in log sales html")
+        let data = {{data|tojson}}
+        console.log(data)
+    </script>
+
+    
+
+    <div class = "container">
+<div class = "jumbotron">
+            <h1>Add a Restaurant</h1>
+    </div>
+
+
+
+    <div id = "see_results">
+
+        </div>
+
+    <div><br>
+          <br>
+          <br></div>
+
+
+        
+        <div id = "logsales">
+        
+          <div class = "row">
+            <div class = "col-md-2">
+                <div class="ui-widget">
+                    <input type="text" id="enter_client" class="text_field" placeholder="title">
+                    <div class="warning_div" id="title_warning_div"></div>
+              </div>
+            </div>
+            <div class = "col-md-2">
+              <div class="ui-widget">
+              <input type="text" id="enter_reams" placeholder="year">
+              <div class="warning_div" id="reams_warning_div"></div>
+              </div>
+            </div>
+            <div class = "col-md-2">
+              <input type="text" id="enter_city" placeholder="city">
+            </div>
+              <div class = "col-md-2">
+              <input type="text" id="enter_region" placeholder="region">
+            </div>
+            <div class = "col-md-2">
+              <input type="text" id="enter_cuisine" placeholder="cuisine">
+            </div>
+          </div>
+        <div class = "row">
+            <br>
+        </div>
+          <div class = "row">
+            <div class = "col-md-2">
+                <div class="ui-widget">
+                    <input type="text" id="enter_price" class="text_field" placeholder="price">
+
+              </div>
+            </div>
+            <div class = "col-md-2">
+              <div class="ui-widget">
+              <input type="text" id="enter_wine" placeholder="wine">
+
+              </div>
+            </div>
+            <div class = "col-md-4">
+              <input type="text" id="enter_url" placeholder="image url">
+            </div>
+            <div class = "col-md-2">
+              <button class="btn btn-primary" id="submit_sale">Submit</button>
+            </div>
+          </div>
+
+
+
+        </div>
+
+    <div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

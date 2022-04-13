@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'search_results.js') }}"></script>
+
+    <script>
+        console.log("restaurants I want to eat at")
+        let data = {{data|tojson}}
+        let regions_matched = {{regions_matched|tojson}}
+        let cusine_matched = {{cusine_matched|tojson}}
+        let match_count = {{match_count|tojson}}
+        let query = {{query|tojson}}
+        console.log(data)
+    </script>
+
+
+<div class = "jumbotron">
+            <h1>Search Page</h1>
+    </div>
+    <div id="search_query_display">
+        <h4>
+            <br><br>
+            There are "{{ match_count }}" search results for "{{ query }}"
+
+        </h4>
+    </div>
+
+    <div id="search_query_container">
+
+    </div>
+
+    <div id="search_results">
+
+
+
+
+
+    </div>
+
+{% endblock %}
+
+
+

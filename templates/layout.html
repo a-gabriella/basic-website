@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+
+<!-- jquery -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+  <script src=https://code.jquery.com/jquery-3.3.1.min.js crossorigin="anonymous">
+    </script>
+
+    <title>Restaurants</title>
+
+
+    <script>
+    $(document).ready(function() {
+        $("#submit_button").click(function (e) {
+             console.log("submit")
+             e.preventDefault()
+
+             let query = $("#input_query").val()
+             if (query == ""){
+                console.log("nothing")
+             }
+             else {
+                 window.location.href = "http://127.0.0.1:5000/search_results/" + query
+             }
+
+
+            })
+
+    })
+
+    </script>
+
+
+  </head>
+  <body>
+
+
+    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Top Restaurants</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/search_results">Search Results</a>
+        <a class="nav-link" href="/infinity">Add Restaurant</a>
+
+      </div>
+    </div>
+    <form class="form-inline" id="form">
+        <input class="form-control mr-sm-2" id="input_query" type="search" placeholder="Search" aria-label="Search" aria-pressed="true">
+        <button class="btn btn-outline-primary my-2 my-sm-0" id="submit_button" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+    <div class="container">   
+        {% block content %}
+        {% endblock %}
+    </div>
+
+  </body>
+</html>
+
+
+
+

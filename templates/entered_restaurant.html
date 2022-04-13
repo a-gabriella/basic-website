@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+    <!--  meta tags from https://getbootstrap.com/docs/5.1/getting-started/introduction/ starter template -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+
+    <!-- Jquery from HW instructions -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../static/log_sales.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'entered_restaurant.js') }}"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        console.log("in entered restaurant html")
+        let data = {{data|tojson}}
+        console.log(data)
+    </script>
+
+
+
+    <div class = "container">
+
+        <div class = "jumbotron">
+            <h1>Added Restaurant</h1>
+        </div>
+
+          <div id="sales">
+          </div>
+
+
+    </div>
+
+
+
+
+{% endblock %}

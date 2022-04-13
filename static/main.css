@@ -1,0 +1,80 @@
+#hello_div{
+    padding-top:  10px;
+    padding-bottom:  10px;
+    color: blue;
+}
+
+div{
+    color: black;
+    text-align: left;
+    font-size: small;
+
+
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.container img{
+    width: 100%;
+    height: auto;
+}
+.h2{
+    text-align: left!important;
+    align-items: start;
+    left: 0px;
+}
+.panel {
+    border: none;
+    box-shadow: none;
+}
+.pro-img-details img {
+    width: 100%;
+}
+.jumbotron{
+    display: flex;
+    background-color: #353535!important;
+    color: #eeeeee;
+    height: 150px;
+    align-items: center;
+    width: 100%;
+    padding: 10px!important;
+    margin: 0px;
+
+}
+.ui-widget{
+    display: block;
+    text-align: start;
+    left: 0px;
+    background-color: lightgray;
+}
+input[type=submit]{
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.input > div {
+    flex: 1;
+    border: 1px black;
+    border-radius: 1px;
+    background: white;
+    margin: 1px;
+}
+.input{
+    padding: 20px 0px 20px 0px;
+}
+
+#draggable, #draggable2 {
+    width: 90px; height: 90px; padding: 0.5em; float: left; margin: 10px 10px 10px 0;
+}
+
+.restaurant {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin: 15px 0;
+}

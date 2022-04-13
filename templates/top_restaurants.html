@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'top_restaurants.js') }}"></script>
+
+    <script>
+        console.log("restaurants I want to eat at")
+        let data = {{data|tojson}}
+        console.log(data)
+    </script>
+
+
+
+<div class="container">
+    <div class = "jumbotron">
+            <h1>Top 3 restaurants I hope to dine at:</h1>
+    </div>
+
+    <div class="row">
+
+    </div>
+<div>
+
+<div class="card-deck">
+  <div class="card">
+    <div id = image1></div>
+    <div class="card-body">
+      <h5 id="card-title1"></h5>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+    <div id = image2></div>
+    <div class="card-body">
+      <h5 id="card-title2"></h5>
+
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card">
+     <div id = image3></div>
+    <div class="card-body">
+      <h5 id="card-title3"></h5>
+
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

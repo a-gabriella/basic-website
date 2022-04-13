@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Dialog - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'restaurant_page_editable.js') }}"></script>
+
+
+<div class="container">
+    <div class = "jumbotron">
+            <h1>Restaurant Page</h1>
+    </div>
+    <div class="row" >
+        <br><br><br><br>
+
+    </div>
+    <div class="row">
+      <div class="col-6">
+          <div class="pro-img-details">
+              <img src = "{{ restaurant.url }}" alt="a picture of the restaurant">
+          </div>
+      </div>
+
+      <div class="col-4">
+          <h1 class="display-4" id="title_to_save" contenteditable="true">
+              {{ restaurant.title }}
+          </h1>
+          <p contenteditable="true">
+              {{ restaurant.city }}, {{ restaurant.region }}
+          </p>
+
+          <div class="restaurant" contenteditable="true">
+                  <strong>Wine highlights:</strong>
+      <p>
+                          <ul>
+                            {% for wine in restaurant.wine %}
+                            <li>{{ wine }}</li>
+                            {% endfor %}
+                        </ul>
+      </p>
+      </div>
+
+          <div class="m-bot15" contenteditable="true">
+              <strong>Cuisine </strong> <p> <a href="http://127.0.0.1:5000/search_results/{{ restaurant.cuisine }}"> {{ restaurant.cuisine }} </a> </p>
+              <strong>Price </strong> <p> {{ restaurant.price }}</p>
+          </div>
+
+
+      </div>
+    <div class = "col-2">
+
+        </div>
+
+    </div>
+
+
+<div class="container">
+        <div class="row">
+            <div class = "col-8">
+
+        </div>
+        <div class = "col-2">
+            <div id="dialog" title="">
+                <p>Are you sure?</p>
+            </div>
+
+            <button id="opener" class="btn btn-secondary btn-sm">Discard Changes</button>
+        </div>
+        <div class = "col-1">
+             <input type="button" id="save_button" class="btn btn-primary btn-sm" value="Save my edits" onclick="saveEdits()"/>
+
+
+        </div>
+        <div class = "col-1">
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}d
